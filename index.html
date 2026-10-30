@@ -1,0 +1,1476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Header</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+    }
+
+    .dv-header-wrapper {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e8eaf0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .dv-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .dv-header-logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #171b35;
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+
+    .dv-header-logo-accent {
+      color: #635bff;
+    }
+
+    .dv-header-navigation {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .dv-header-nav-link {
+      color: #50556a;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .dv-header-nav-link:hover {
+      color: #635bff;
+    }
+
+    .dv-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .dv-header-login {
+      color: #171b35;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dv-header-button {
+      background: #635bff;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .dv-header-button:hover {
+      background: #4c44e0;
+    }
+
+    @media (max-width: 768px) {
+      .dv-header-container {
+        flex-wrap: wrap;
+        padding: 16px;
+      }
+
+      .dv-header-navigation {
+        order: 3;
+        width: 100%;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 8px 0;
+      }
+
+      .dv-header-nav-link {
+        white-space: nowrap;
+        font-size: 13px;
+      }
+
+      .dv-header-login {
+        display: none;
+      }
+
+      .dv-header-button {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+    }
+
+    /* HERO SECTION */
+
+    .dv-hero-section {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 24px;
+      background: linear-gradient(135deg, #f8f9ff, #eef0ff);
+    }
+
+    .dv-hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .dv-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .dv-hero-badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 30px;
+      background: #e8e6ff;
+      color: #635bff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .dv-hero-title {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      color: #171b35;
+      margin: 24px 0;
+    }
+
+    .dv-hero-title-accent {
+      color: #635bff;
+      display: block;
+    }
+
+    .dv-hero-description {
+      max-width: 520px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #656b80;
+      margin-bottom: 32px;
+    }
+
+    .dv-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dv-hero-primary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 26px;
+      background: #635bff;
+      color: white;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .dv-hero-primary-btn:hover {
+      background: #4c44e0;
+      transform: translateY(-3px);
+    }
+
+    .dv-hero-secondary-btn {
+      padding: 16px 24px;
+      color: #171b35;
+      border: 1px solid #d6d9e8;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .dv-hero-secondary-btn:hover {
+      border-color: #635bff;
+      color: #635bff;
+    }
+
+    .dv-hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      margin-top: 55px;
+    }
+
+    .dv-hero-stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dv-hero-stat-item strong {
+      font-size: 26px;
+      color: #171b35;
+    }
+
+    .dv-hero-stat-item span {
+      font-size: 13px;
+      color: #777d91;
+    }
+
+    /* VISUAL */
+
+    .dv-hero-visual {
+      position: relative;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 420px;
+    }
+
+    .dv-hero-visual-glow {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      max-width: 100%;
+      border-radius: 50%;
+      background: #aaa5ff;
+      filter: blur(95px);
+      opacity: 0.35;
+    }
+
+    .dv-hero-code-card {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      background: #171b35;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(30, 25, 90, 0.2);
+      transform: rotate(-3deg);
+    }
+
+    .dv-hero-code-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid #303550;
+      color: #969bb8;
+      font-size: 12px;
+    }
+
+    .dv-hero-code-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dv-hero-code-dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff5f57;
+    }
+
+    .dv-hero-code-dots i:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .dv-hero-code-dots i:nth-child(3) {
+      background: #28c840;
+    }
+
+    .dv-hero-code-body {
+      padding: 30px 24px;
+      color: #e5e7ff;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 2.2;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+
+    .dv-hero-code-purple {
+      color: #b69cff;
+    }
+
+    .dv-hero-code-green {
+      color: #65e0b5;
+    }
+
+    .dv-hero-code-orange {
+      color: #ffbb78;
+    }
+
+    .dv-hero-code-comment {
+      color: #8289a8;
+      margin-top: 16px;
+    }
+
+    .dv-hero-floating-card {
+      position: absolute;
+      right: -10px;
+      bottom: 35px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 16px 20px;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .dv-hero-floating-icon {
+      font-size: 28px;
+      color: #635bff;
+    }
+
+    .dv-hero-floating-card div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .dv-hero-floating-card strong {
+      color: #171b35;
+      font-size: 14px;
+    }
+
+    .dv-hero-floating-card small {
+      color: #777d91;
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .dv-hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .dv-hero-section {
+        padding: 70px 20px;
+      }
+
+      .dv-hero-visual {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dv-hero-title {
+        letter-spacing: -1px;
+      }
+
+      .dv-hero-stats {
+        gap: 24px;
+      }
+
+      .dv-hero-code-body {
+        font-size: 11px;
+        padding: 20px 14px;
+      }
+
+      .dv-hero-floating-card {
+        right: 0;
+        bottom: 0;
+        padding: 12px;
+      }
+    }
+
+    /* PRICING SECTION */
+
+    .dv-pricing-section {
+      padding: 100px 24px;
+      background: #ffffff;
+    }
+
+    .dv-pricing-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dv-pricing-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .dv-pricing-label {
+      color: #635bff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .dv-pricing-title {
+      font-size: clamp(30px, 4vw, 44px);
+      color: #171b35;
+      margin: 18px 0;
+      letter-spacing: -1px;
+    }
+
+    .dv-pricing-subtitle {
+      color: #777d91;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* GRID */
+
+    .dv-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    /* CARD */
+
+    .dv-pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 36px 30px;
+      background: #ffffff;
+      border: 1px solid #e5e7f0;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+
+    .dv-pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+      border-color: #bcb8ff;
+    }
+
+    /* FEATURED CARD */
+
+    .dv-pricing-featured {
+      border: 2px solid #635bff;
+      background: #fafaff;
+      box-shadow: 0 15px 45px rgba(99,91,255,0.1);
+    }
+
+    .dv-pricing-popular {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #635bff;
+      color: white;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* ICON */
+
+    .dv-pricing-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #eeedff;
+      font-size: 27px;
+      margin-bottom: 26px;
+    }
+
+    /* CONTENT */
+
+    .dv-pricing-card-title {
+      font-size: 23px;
+      color: #171b35;
+      margin: 0 0 14px;
+    }
+
+    .dv-pricing-card-description {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #777d91;
+      min-height: 75px;
+      margin: 0 0 26px;
+    }
+
+    /* PRICE */
+
+    .dv-pricing-price {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dv-pricing-from {
+      color: #777d91;
+      font-size: 13px;
+    }
+
+    .dv-pricing-price strong {
+      font-size: 40px;
+      letter-spacing: -1px;
+      color: #171b35;
+    }
+
+    .dv-pricing-period {
+      font-size: 13px;
+      color: #9297a9;
+    }
+
+    .dv-pricing-divider {
+      height: 1px;
+      background: #e7e8f0;
+      margin: 30px 0;
+    }
+
+    /* FEATURES */
+
+    .dv-pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex-grow: 1;
+    }
+
+    .dv-pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #50566c;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .dv-pricing-features li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #e8e6ff;
+      color: #635bff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* BUTTON */
+
+    .dv-pricing-button {
+      display: block;
+      padding: 16px 20px;
+      border: 1px solid #635bff;
+      border-radius: 10px;
+      color: #635bff;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .dv-pricing-button:hover {
+      background: #635bff;
+      color: #ffffff;
+    }
+
+    .dv-pricing-button-featured {
+      background: #635bff;
+      color: #ffffff;
+    }
+
+    .dv-pricing-button-featured:hover {
+      background: #4c44e0;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 992px) {
+      .dv-pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .dv-pricing-section {
+        padding: 70px 16px;
+      }
+
+      .dv-pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .dv-pricing-card {
+        padding: 32px 24px;
+      }
+
+      .dv-pricing-card-description {
+        min-height: auto;
+      }
+
+      .dv-pricing-price strong {
+        font-size: 36px;
+      }
+    }
+
+    /* CONTACT SECTION */
+
+    .dv-contact-section {
+      padding: 110px 24px;
+      background: #f7f8ff;
+    }
+
+    .dv-contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .dv-contact-label {
+      color: #635bff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .dv-contact-title {
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.2;
+      color: #171b35;
+      margin: 22px 0;
+      letter-spacing: -1.5px;
+    }
+
+    .dv-contact-highlight {
+      color: #635bff;
+    }
+
+    .dv-contact-description {
+      font-size: 16px;
+      color: #73798d;
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .dv-contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .dv-contact-detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #e8e6ff;
+      border-radius: 14px;
+      color: #635bff;
+      font-size: 23px;
+    }
+
+    .dv-contact-detail div:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .dv-contact-detail strong {
+      color: #171b35;
+      font-size: 15px;
+    }
+
+    .dv-contact-detail a,
+    .dv-contact-detail span {
+      color: #73798d;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    /* FORM CARD */
+
+    .dv-contact-form-card {
+      background: #ffffff;
+      padding: 42px;
+      border-radius: 22px;
+      box-shadow: 0 25px 70px rgba(30,35,90,0.07);
+      border: 1px solid #e9eaf4;
+    }
+
+    .dv-contact-form-title {
+      font-size: 26px;
+      color: #171b35;
+      margin: 0 0 10px;
+    }
+
+    .dv-contact-form-subtitle {
+      color: #858a9d;
+      font-size: 14px;
+      margin: 0 0 30px;
+    }
+
+    .dv-contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .dv-contact-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .dv-contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .dv-contact-field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #30364c;
+    }
+
+    .dv-contact-field input,
+    .dv-contact-field select,
+    .dv-contact-field textarea {
+      width: 100%;
+      padding: 15px 16px;
+      background: #fafbff;
+      border: 1px solid #e0e3ee;
+      border-radius: 10px;
+      outline: none;
+      font: inherit;
+      font-size: 14px;
+      color: #171b35;
+      transition: 0.2s;
+    }
+
+    .dv-contact-field textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .dv-contact-field input:focus,
+    .dv-contact-field select:focus,
+    .dv-contact-field textarea:focus {
+      border-color: #635bff;
+      box-shadow: 0 0 0 3px rgba(99,91,255,0.1);
+    }
+
+    .dv-contact-submit {
+      width: 100%;
+      padding: 17px;
+      background: #635bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dv-contact-submit:hover {
+      background: #4c44e0;
+      transform: translateY(-2px);
+    }
+
+    .dv-contact-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .dv-contact-status {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .dv-contact-status:empty {
+      display: none;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .dv-contact-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dv-contact-section {
+        padding: 70px 16px;
+      }
+
+      .dv-contact-form-card {
+        padding: 26px 20px;
+      }
+
+      .dv-contact-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FOOTER */
+
+    .dv-footer-section {
+      background: #171b35;
+      padding: 80px 24px 0;
+      color: #ffffff;
+    }
+
+    .dv-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dv-footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 65px;
+    }
+
+    .dv-footer-logo {
+      display: inline-block;
+      color: #ffffff;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+
+    .dv-footer-logo span {
+      color: #8d87ff;
+    }
+
+    .dv-footer-description {
+      max-width: 330px;
+      color: #a5aac4;
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 22px 0;
+    }
+
+    .dv-footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .dv-footer-socials a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #393e59;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .dv-footer-socials a:hover {
+      background: #635bff;
+      border-color: #635bff;
+      transform: translateY(-3px);
+    }
+
+    .dv-footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 17px;
+    }
+
+    .dv-footer-column h4 {
+      font-size: 16px;
+      margin: 5px 0 12px;
+      color: #ffffff;
+    }
+
+    .dv-footer-column a {
+      color: #a5aac4;
+      font-size: 14px;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .dv-footer-column a:hover {
+      color: #a39eff;
+    }
+
+    .dv-footer-bottom {
+      border-top: 1px solid #353a55;
+      padding: 26px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .dv-footer-bottom p {
+      color: #9399b5;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .dv-footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .dv-footer-bottom-links a {
+      color: #9399b5;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .dv-footer-bottom-links a:hover {
+      color: #ffffff;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .dv-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dv-footer-section {
+        padding: 60px 20px 0;
+      }
+
+      .dv-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 45px;
+      }
+
+      .dv-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .dv-footer-bottom-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="dv-header-wrapper">
+  <div class="dv-header-container">
+
+    <a href="/" class="dv-header-logo">
+      DV<span class="dv-header-logo-accent">Coding.</span>
+    </a>
+
+    <nav class="dv-header-navigation" aria-label="Main navigation">
+      <a href="#home" class="dv-header-nav-link">Home</a>
+      <a href="#services" class="dv-header-nav-link">Services</a>
+      <a href="#about" class="dv-header-nav-link">About Us</a>
+      <a href="#portfolio" class="dv-header-nav-link">Portfolio</a>
+      <a href="#contact" class="dv-header-nav-link">Contact</a>
+    </nav>
+
+    <div class="dv-header-actions">
+      <a href="/login" class="dv-header-login">Log In</a>
+      <a href="#contact" class="dv-header-button">
+        Get Started
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<section class="dv-hero-section" id="home">
+  <div class="dv-hero-container">
+
+    <div class="dv-hero-content">
+      <span class="dv-hero-badge">
+        DIGITAL SOLUTIONS FOR YOUR BUSINESS
+      </span>
+
+      <h1 class="dv-hero-title">
+        We Build Digital
+        <span class="dv-hero-title-accent">
+          Experiences
+        </span>
+        That Matter.
+      </h1>
+
+      <p class="dv-hero-description">
+        We create modern websites, powerful web
+        applications, and AI-powered automation
+        systems that help your business grow.
+      </p>
+
+      <div class="dv-hero-actions">
+        <a href="#contact" class="dv-hero-primary-btn">
+          Start Your Project
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a href="#portfolio" class="dv-hero-secondary-btn">
+          View Our Work
+        </a>
+      </div>
+
+      <div class="dv-hero-stats">
+        <div class="dv-hero-stat-item">
+          <strong>50+</strong>
+          <span>Projects</span>
+        </div>
+
+        <div class="dv-hero-stat-item">
+          <strong>30+</strong>
+          <span>Clients</span>
+        </div>
+
+        <div class="dv-hero-stat-item">
+          <strong>5+</strong>
+          <span>Years Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-hero-visual">
+      <div class="dv-hero-visual-glow"></div>
+
+      <div class="dv-hero-code-card">
+        <div class="dv-hero-code-top">
+          <div class="dv-hero-code-dots">
+            <i></i><i></i><i></i>
+          </div>
+          <span>business.js</span>
+        </div>
+
+        <div class="dv-hero-code-body">
+          <div>
+            <span class="dv-hero-code-purple">const</span>
+            business = {
+          </div>
+          <div>
+            &nbsp; website:
+            <span class="dv-hero-code-green">"modern"</span>,
+          </div>
+          <div>
+            &nbsp; automation:
+            <span class="dv-hero-code-green">"AI-powered"</span>,
+          </div>
+          <div>
+            &nbsp; growth:
+            <span class="dv-hero-code-orange">true</span>
+          </div>
+          <div>};</div>
+          <div class="dv-hero-code-comment">
+            // Let's build something great
+          </div>
+        </div>
+      </div>
+
+      <div class="dv-hero-floating-card">
+        <span class="dv-hero-floating-icon">✦</span>
+        <div>
+          <strong>AI Automation</strong>
+          <small>Smarter Business Systems</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="dv-pricing-section" id="services">
+  <div class="dv-pricing-container">
+
+    <div class="dv-pricing-heading">
+      <span class="dv-pricing-label">OUR SERVICES</span>
+      <h2 class="dv-pricing-title">
+        Solutions Built for Your Growth
+      </h2>
+      <p class="dv-pricing-subtitle">
+        Choose the right solution for your business.
+        From modern websites to intelligent automation.
+      </p>
+    </div>
+
+    <div class="dv-pricing-grid">
+
+      <!-- CARD 1 -->
+      <div class="dv-pricing-card">
+        <div class="dv-pricing-icon">🌐</div>
+
+        <h3 class="dv-pricing-card-title">
+          Business Website
+        </h3>
+
+        <p class="dv-pricing-card-description">
+          A professional website designed to
+          attract customers and grow your brand.
+        </p>
+
+        <div class="dv-pricing-price">
+          <span class="dv-pricing-from">Starting at</span>
+          <strong>$3,500</strong>
+          <span class="dv-pricing-period">/ project</span>
+        </div>
+
+        <div class="dv-pricing-divider"></div>
+
+        <ul class="dv-pricing-features">
+          <li>Responsive Modern Design</li>
+          <li>Up to 5 Pages</li>
+          <li>Basic SEO Optimization</li>
+          <li>Contact Forms</li>
+          <li>Mobile Friendly</li>
+          <li>Fast Loading Speed</li>
+        </ul>
+
+        <a href="#contact" class="dv-pricing-button">
+          Get Started →
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="dv-pricing-card dv-pricing-featured">
+
+        <div class="dv-pricing-popular">
+          MOST POPULAR
+        </div>
+
+        <div class="dv-pricing-icon">⚡</div>
+
+        <h3 class="dv-pricing-card-title">
+          AI Automation
+        </h3>
+
+        <p class="dv-pricing-card-description">
+          Automate repetitive tasks and build
+          smarter business workflows.
+        </p>
+
+        <div class="dv-pricing-price">
+          <span class="dv-pricing-from">Starting at</span>
+          <strong>$2,500</strong>
+          <span class="dv-pricing-period">/ project</span>
+        </div>
+
+        <div class="dv-pricing-divider"></div>
+
+        <ul class="dv-pricing-features">
+          <li>Workflow Automation</li>
+          <li>AI-Powered Integrations</li>
+          <li>CRM Integration</li>
+          <li>Automated Notifications</li>
+          <li>API Connections</li>
+          <li>Business Process Optimization</li>
+        </ul>
+
+        <a href="#contact"
+           class="dv-pricing-button dv-pricing-button-featured">
+          Start Automating →
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="dv-pricing-card">
+        <div class="dv-pricing-icon">💻</div>
+
+        <h3 class="dv-pricing-card-title">
+          Custom Software
+        </h3>
+
+        <p class="dv-pricing-card-description">
+          Custom applications and platforms
+          built around your business needs.
+        </p>
+
+        <div class="dv-pricing-price">
+          <span class="dv-pricing-from">Custom</span>
+          <strong>Quote</strong>
+          <span class="dv-pricing-period">/ project</span>
+        </div>
+
+        <div class="dv-pricing-divider"></div>
+
+        <ul class="dv-pricing-features">
+          <li>Custom Web Applications</li>
+          <li>Admin Dashboards</li>
+          <li>Database Architecture</li>
+          <li>API Development</li>
+          <li>Third-Party Integrations</li>
+          <li>Scalable Architecture</li>
+        </ul>
+
+        <a href="#contact" class="dv-pricing-button">
+          Request a Quote →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="dv-contact-section" id="contact">
+  <div class="dv-contact-container">
+
+    <div class="dv-contact-info">
+      <span class="dv-contact-label">CONTACT US</span>
+
+      <h2 class="dv-contact-title">
+        Let's Build Something
+        <span class="dv-contact-highlight">Great Together.</span>
+      </h2>
+
+      <p class="dv-contact-description">
+        Have a project in mind? Tell us about your
+        business and we'll help you find the right
+        digital solution.
+      </p>
+
+      <div class="dv-contact-detail">
+        <div class="dv-contact-detail-icon">✉</div>
+        <div>
+          <strong>Email Us</strong>
+          <a href="mailto:hello@example.com">
+            hello@example.com
+          </a>
+        </div>
+      </div>
+
+      <div class="dv-contact-detail">
+        <div class="dv-contact-detail-icon">◷</div>
+        <div>
+          <strong>Response Time</strong>
+          <span>We'll get back to you soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-contact-form-card">
+      <h3 class="dv-contact-form-title">
+        Start Your Project
+      </h3>
+
+      <p class="dv-contact-form-subtitle">
+        Fill out the form below.
+      </p>
+
+      <form class="dv-contact-form" id="dvContactForm">
+
+        <div class="dv-contact-form-row">
+          <div class="dv-contact-field">
+            <label for="dvContactName">Full Name *</label>
+            <input
+                    type="text"
+                    id="dvContactName"
+                    name="name"
+                    placeholder="John Smith"
+                    autocomplete="name"
+                    required
+            >
+          </div>
+
+          <div class="dv-contact-field">
+            <label for="dvContactEmail">Email Address *</label>
+            <input
+                    type="email"
+                    id="dvContactEmail"
+                    name="email"
+                    placeholder="john@example.com"
+                    autocomplete="email"
+                    required
+            >
+          </div>
+        </div>
+
+        <div class="dv-contact-field">
+          <label for="dvContactService">
+            Interested Service *
+          </label>
+          <select id="dvContactService" name="service" required>
+            <option value="">Select a Service</option>
+            <option value="website">Business Website</option>
+            <option value="automation">AI Automation</option>
+            <option value="software">Custom Software</option>
+          </select>
+        </div>
+
+        <div class="dv-contact-field">
+          <label for="dvContactBudget">Project Budget</label>
+          <select id="dvContactBudget" name="budget">
+            <option value="">Select Your Budget</option>
+            <option value="under-2500">Under $2,500</option>
+            <option value="2500-5000">$2,500 – $5,000</option>
+            <option value="5000-10000">$5,000 – $10,000</option>
+            <option value="10000-plus">$10,000+</option>
+          </select>
+        </div>
+
+        <div class="dv-contact-field">
+          <label for="dvContactMessage">
+            Tell Us About Your Project *
+          </label>
+          <textarea
+                  id="dvContactMessage"
+                  name="message"
+                  rows="5"
+                  placeholder="Describe your project..."
+                  required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="dv-contact-submit">
+          Send Message →
+        </button>
+
+        <p class="dv-contact-status"
+           id="dvContactStatus"
+           role="status"
+           aria-live="polite"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="dv-footer-section">
+  <div class="dv-footer-container">
+
+    <div class="dv-footer-grid">
+
+      <div class="dv-footer-brand">
+        <a href="#home" class="dv-footer-logo">
+          DV<span>Coding.</span>
+        </a>
+
+        <p class="dv-footer-description">
+          We build modern websites, custom software,
+          and AI-powered systems that help businesses
+          work smarter and grow faster.
+        </p>
+
+        <div class="dv-footer-socials">
+          <a href="https://www.instagram.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Instagram">IG</a>
+
+          <a href="https://www.linkedin.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="LinkedIn">IN</a>
+
+          <a href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Facebook">FB</a>
+        </div>
+      </div>
+
+      <div class="dv-footer-column">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="dv-footer-column">
+        <h4>Our Services</h4>
+        <a href="#services">Web Development</a>
+        <a href="#services">AI Automation</a>
+        <a href="#services">Custom Software</a>
+        <a href="#services">API Integrations</a>
+        <a href="#services">Business Solutions</a>
+      </div>
+
+      <div class="dv-footer-column">
+        <h4>Get in Touch</h4>
+        <a href="mailto:hello@example.com">
+          hello@example.com
+        </a>
+        <a href="#contact">Request a Quote</a>
+        <a href="#contact">Start a Project</a>
+      </div>
+
+    </div>
+
+    <div class="dv-footer-bottom">
+      <p>
+        © <span id="dvFooterYear">2026</span>
+        DVCoding. All rights reserved.
+      </p>
+
+      <div class="dv-footer-bottom-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
